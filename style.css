@@ -1,4 +1,4 @@
-* {
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -956,76 +956,42 @@ footer p {
     .footer-right {
         text-align: left;
     }
+}
 
-/* ABOUT FOTO */
-.about-content {
+/* UKURAN FOTO ABOUT SAJA */
+#about .about-content {
     display: flex;
     align-items: center;
     gap: 40px;
 }
 
-.about-photo {
+#about .about-photo {
     width: 220px;
+    max-width: 220px;
     flex-shrink: 0;
 }
 
-.about-photo img {
-    width: 100%;
+#about .about-photo img {
+    width: 220px;
     height: 280px;
     object-fit: cover;
-    border-radius: 18px;
-    border: 2px solid #00ff88;
     display: block;
+    border-radius: 18px;
 }
 
-.about-text {
-    flex: 1;
-}
-
+/* MOBILE */
 @media (max-width: 768px) {
-    .about-content {
+    #about .about-content {
         flex-direction: column;
     }
 
-    .about-photo {
+    #about .about-photo {
         width: 220px;
+        max-width: 220px;
     }
-}
-/* FIX FOTO ABOUT */
-.about-grid {
-    display: flex !important;
-    align-items: center !important;
-    gap: 40px !important;
-}
 
-/* FIX FOTO ABOUT */
-.about-content {
-    display: flex !important;
-    align-items: center !important;
-    gap: 40px !important;
-}
-
-.about-photo {
-    width: 220px !important;
-    height: 280px !important;
-    flex: 0 0 220px !important;
-}
-
-.about-photo img {
-    width: 220px !important;
-    height: 280px !important;
-    object-fit: cover !important;
-    display: block !important;
-    border-radius: 18px !important;
-    border: 2px solid #00ff88 !important;
-}
-
-.about-text {
-    flex: 1 !important;
-}
-
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column !important;
+    #about .about-photo img {
+        width: 220px;
+        height: 280px;
     }
 }
