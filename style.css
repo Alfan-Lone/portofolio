@@ -995,3 +995,65 @@ footer p {
         height: 280px;
     }
 }
+/* =========================
+   ABOUT PHOTO - NEON PROFILE
+   ========================= */
+
+#about .about-photo {
+    width: 220px !important;
+    max-width: 220px !important;
+    height: 280px !important;
+    flex: 0 0 220px !important;
+
+    padding: 4px !important;
+    border: 2px solid #00ff88 !important;
+    border-radius: 20px !important;
+
+    overflow: hidden !important;
+
+    box-shadow:
+        0 0 8px #00ff88,
+        0 0 20px rgba(0, 255, 136, 0.5) !important;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease !important;
+}
+
+/* FOTO */
+#about .about-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    display: block !important;
+
+    border-radius: 15px !important;
+
+    transition: transform 0.35s ease !important;
+}
+
+/* SAAT DISENTUH MOUSE */
+#about .about-photo:hover {
+    transform: translateY(-10px) scale(1.03) !important;
+
+    box-shadow:
+        0 0 12px #00ff88,
+        0 0 30px #00ff88,
+        0 0 55px rgba(0, 255, 136, 0.5) !important;
+}
+
+/* FOTO IKUT GERAK SEDIKIT */
+#about .about-photo:hover img {
+    transform: scale(1.06) !important;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    #about .about-photo {
+        width: 220px !important;
+        max-width: 220px !important;
+        height: 280px !important;
+        flex: 0 0 220px !important;
+    }
+}
