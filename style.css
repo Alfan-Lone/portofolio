@@ -998,43 +998,20 @@ footer p {
     gap: 40px !important;
 }
 
-.about-grid img {
-    width: 220px !important;
-    height: 280px !important;
-    object-fit: cover !important;
-    border-radius: 18px !important;
-    border: 2px solid #00ff88 !important;
-    flex-shrink: 0 !important;
-}
-
-.about-text {
-    flex: 1 !important;
-}
-
-@media (max-width: 768px) {
-    .about-grid {
-        flex-direction: column !important;
-    }
-
-    .about-grid img {
-        width: 220px !important;
-        height: 280px !important;
-    }
-}
-/* ABOUT - FOTO KECIL DI KIRI */
-#about .about-content {
+/* FIX FOTO ABOUT */
+.about-content {
     display: flex !important;
     align-items: center !important;
     gap: 40px !important;
 }
 
-#about .about-photo {
+.about-photo {
     width: 220px !important;
     height: 280px !important;
     flex: 0 0 220px !important;
 }
 
-#about .about-photo img {
+.about-photo img {
     width: 220px !important;
     height: 280px !important;
     object-fit: cover !important;
@@ -1043,17 +1020,12 @@ footer p {
     border: 2px solid #00ff88 !important;
 }
 
-#about .about-text {
+.about-text {
     flex: 1 !important;
 }
 
 @media (max-width: 768px) {
-    #about .about-content {
+    .about-content {
         flex-direction: column !important;
-    }
-
-    #about .about-photo {
-        width: 220px !important;
-        height: 280px !important;
     }
 }
