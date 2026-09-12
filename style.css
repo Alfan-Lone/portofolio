@@ -991,3 +991,33 @@ footer p {
         width: 220px;
     }
 }
+/* FIX FOTO ABOUT */
+.about-grid {
+    display: flex !important;
+    align-items: center !important;
+    gap: 40px !important;
+}
+
+.about-grid img {
+    width: 220px !important;
+    height: 280px !important;
+    object-fit: cover !important;
+    border-radius: 18px !important;
+    border: 2px solid #00ff88 !important;
+    flex-shrink: 0 !important;
+}
+
+.about-text {
+    flex: 1 !important;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column !important;
+    }
+
+    .about-grid img {
+        width: 220px !important;
+        height: 280px !important;
+    }
+}
