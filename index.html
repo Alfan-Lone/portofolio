@@ -1,1 +1,1285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>ALPAN | Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#07090d;
+    color:#fff;
+    font-family:Inter,Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00ff99;
+    opacity:.06;
+    filter:blur(150px);
+    border-radius:50%;
+    top:-250px;
+    left:-200px;
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00c8ff;
+    opacity:.05;
+    filter:blur(150px);
+    border-radius:50%;
+    right:-250px;
+    bottom:-200px;
+    pointer-events:none;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:0 25px;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    z-index:1000;
+
+    background:rgba(7,9,13,.75);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.nav-inner{
+    height:70px;
+    max-width:1100px;
+    margin:auto;
+    padding:0 25px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-family:"Space Grotesk";
+    font-size:21px;
+    font-weight:700;
+    text-decoration:none;
+    color:white;
+}
+
+.logo span{
+    color:#00ff99;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#9299a5;
+    text-decoration:none;
+    font-size:13px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#00ff99;
+}
+
+.menu{
+    display:none;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:100px;
+}
+
+.hero-grid{
+    width:100%;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 13px;
+    border:1px solid rgba(0,255,153,.2);
+    background:rgba(0,255,153,.04);
+    border-radius:50px;
+
+    color:#9ba3ae;
+    font-size:11px;
+    margin-bottom:25px;
+}
+
+.dot{
+    width:7px;
+    height:7px;
+    background:#00ff99;
+    border-radius:50%;
+    box-shadow:0 0 12px #00ff99;
+}
+
+.hero small{
+    color:#8d949f;
+    letter-spacing:5px;
+    font-size:12px;
+}
+
+.hero h1{
+    font-family:"Space Grotesk";
+    font-size:clamp(70px,10vw,120px);
+    line-height:.95;
+    letter-spacing:-6px;
+    margin:5px 0 15px;
+}
+
+.hero h1 span{
+    color:#00ff99;
+}
+
+.hero h2{
+    font-size:24px;
+    font-weight:500;
+}
+
+.hero h2 span{
+    color:#00ff99;
+}
+
+.description{
+    max-width:550px;
+    color:#8e96a2;
+    font-size:14px;
+    line-height:1.8;
+    margin-top:20px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    margin-top:30px;
+}
+
+.btn{
+    padding:13px 20px;
+    border-radius:9px;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.primary{
+    background:#00ff99;
+    color:#00150c;
+}
+
+.primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 35px rgba(0,255,153,.2);
+}
+
+.secondary{
+    color:white;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.secondary:hover{
+    border-color:#00ff99;
+    color:#00ff99;
+}
+
+.social{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+}
+
+.social a{
+    color:#737b87;
+    text-decoration:none;
+    font-size:11px;
+}
+
+.social a:hover{
+    color:#00ff99;
+}
+
+
+/* CODE CARD */
+
+.code-card{
+    background:#101319;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    overflow:hidden;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.4);
+
+    transform:rotate(2deg);
+    transition:.4s;
+}
+
+.code-card:hover{
+    transform:rotate(0deg) translateY(-8px);
+}
+
+.window{
+    height:43px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    display:flex;
+    align-items:center;
+    padding:0 15px;
+}
+
+.window-dots{
+    display:flex;
+    gap:6px;
+}
+
+.window-dots i{
+    width:9px;
+    height:9px;
+    background:#444;
+    border-radius:50%;
+}
+
+.window-title{
+    margin-left:auto;
+    color:#626975;
+    font-size:10px;
+    font-family:monospace;
+}
+
+.code{
+    padding:28px;
+    font-family:monospace;
+    font-size:13px;
+    line-height:2;
+    color:#c6ccd5;
+}
+
+.indent{
+    padding-left:25px;
+}
+
+.purple{color:#c792ea}
+.blue{color:#82aaff}
+.green{color:#c3e88d}
+.orange{color:#f78c6c}
+
+
+/* SECTIONS */
+
+section{
+    padding:110px 0;
+}
+
+.section-title{
+    margin-bottom:50px;
+}
+
+.section-title .number{
+    color:#00ff99;
+    font-family:monospace;
+    font-size:12px;
+}
+
+.section-title p{
+    color:#00ff99;
+    font-size:11px;
+    letter-spacing:3px;
+    margin-top:8px;
+}
+
+.section-title h2{
+    font-family:"Space Grotesk";
+    font-size:42px;
+    margin-top:3px;
+}
+
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.about-text p{
+    color:#9299a5;
+    font-size:14px;
+    line-height:1.9;
+    margin-bottom:18px;
+}
+
+.about-text strong{
+    color:white;
+}
+
+.about-cards{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.about-card{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    padding:20px;
+
+    background:#101319;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:15px;
+
+    transition:.3s;
+}
+
+.about-card:hover{
+    transform:translateX(6px);
+    border-color:rgba(0,255,153,.3);
+}
+
+.about-icon{
+    font-size:25px;
+}
+
+.about-card h3{
+    font-size:14px;
+}
+
+.about-card p{
+    color:#777f8b;
+    font-size:11px;
+    margin-top:3px;
+}
+
+
+/* SKILLS */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.skill{
+    padding:25px;
+    background:#101319;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:17px;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-7px);
+    border-color:rgba(0,255,153,.3);
+}
+
+.skill-icon{
+    color:#00ff99;
+    font-family:monospace;
+    font-size:18px;
+}
+
+.skill h3{
+    margin-top:20px;
+    font-size:17px;
+}
+
+.skill p{
+    color:#7e8692;
+    font-size:11px;
+    line-height:1.7;
+    margin-top:8px;
+}
+
+
+/* PROJECTS */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.project{
+    background:#101319;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:18px;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.project:hover{
+    transform:translateY(-7px);
+    border-color:rgba(0,255,153,.3);
+}
+
+.project-cover{
+    height:220px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle,rgba(0,255,153,.15),transparent 60%),
+    #0a1010;
+}
+
+.project:nth-child(2) .project-cover{
+    background:
+    radial-gradient(circle,rgba(0,200,255,.15),transparent 60%),
+    #091014;
+}
+
+.project:nth-child(3) .project-cover{
+    background:
+    radial-gradient(circle,rgba(170,90,255,.15),transparent 60%),
+    #0e0a13;
+}
+
+.project-cover div{
+    font-size:70px;
+}
+
+.project-info{
+    padding:25px;
+}
+
+.project-info small{
+    color:#00ff99;
+    font-family:monospace;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.project-info h3{
+    font-family:"Space Grotesk";
+    font-size:23px;
+    margin-top:7px;
+}
+
+.project-info p{
+    color:#7f8793;
+    font-size:12px;
+    line-height:1.7;
+    margin-top:8px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:17px;
+}
+
+.tags span{
+    color:#818995;
+    border:1px solid rgba(255,255,255,.07);
+    padding:5px 8px;
+    border-radius:5px;
+    font-size:9px;
+}
+
+.project-link{
+    display:inline-block;
+    color:white;
+    text-decoration:none;
+    font-size:11px;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.project-link:hover{
+    color:#00ff99;
+}
+
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid rgba(255,255,255,.07);
+    border-bottom:1px solid rgba(255,255,255,.07);
+    padding:50px 0;
+}
+
+.stat{
+    text-align:center;
+    border-right:1px solid rgba(255,255,255,.07);
+}
+
+.stat:last-child{
+    border:none;
+}
+
+.stat strong{
+    font-family:"Space Grotesk";
+    font-size:32px;
+    color:#00ff99;
+    display:block;
+}
+
+.stat span{
+    color:#747c88;
+    font-size:10px;
+}
+
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact-box{
+    padding:80px 30px;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:25px;
+
+    background:
+    radial-gradient(circle,rgba(0,255,153,.07),transparent 65%);
+}
+
+.contact-box p{
+    color:#00ff99;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+.contact-box h2{
+    font-family:"Space Grotesk";
+    font-size:clamp(40px,6vw,70px);
+    line-height:1;
+    max-width:750px;
+    margin:15px auto 20px;
+}
+
+.contact-box h2 span{
+    color:#00ff99;
+}
+
+.contact-box .desc{
+    color:#7f8792;
+    letter-spacing:0;
+    max-width:500px;
+    margin:auto auto 30px;
+    line-height:1.7;
+}
+
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.07);
+    padding:35px 0;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer p{
+    color:#646c77;
+    font-size:10px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .code-card{
+        max-width:600px;
+    }
+
+    .skills{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+
+        background:#090b0f;
+
+        flex-direction:column;
+        padding:20px 25px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:70px;
+    }
+
+    .hero h2{
+        font-size:19px;
+    }
+
+    .buttons{
+        flex-wrap:wrap;
+    }
+
+    .skills{
+        grid-template-columns:1fr;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+        gap:30px;
+    }
+
+    .stat:nth-child(2){
+        border:none;
+    }
+
+    .stat:nth-child(3){
+        border-right:1px solid rgba(255,255,255,.07);
+    }
+
+    .footer{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="nav-inner">
+
+        <a href="#home" class="logo">
+            <span>&lt;</span>ALPAN<span>/&gt;</span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="menu" onclick="menu()">☰</div>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+    <div>
+
+        <div class="badge">
+            <span class="dot"></span>
+            Available for projects
+        </div>
+
+        <small>HELLO, I'M</small>
+
+        <h1>ALPAN<span>.</span></h1>
+
+        <h2>
+            Web Developer <span>+</span> Creator
+        </h2>
+
+        <p class="description">
+            Saya membuat website modern, ringan, dan responsive.
+            Saya juga tertarik dengan teknologi, gaming,
+            desain digital, dan content creation.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn primary">
+                Lihat Project →
+            </a>
+
+            <a href="#contact" class="btn secondary">
+                Hubungi Saya
+            </a>
+
+        </div>
+
+        <div class="social">
+
+            <a href="https://github.com/Alfan-Lone" target="_blank">
+                GitHub
+            </a>
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                YouTube
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="code-card">
+
+        <div class="window">
+
+            <div class="window-dots">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+
+            <div class="window-title">
+                portfolio.js
+            </div>
+
+        </div>
+
+        <div class="code">
+
+            <div>
+                <span class="purple">const</span>
+                <span class="blue">developer</span> = {
+            </div>
+
+            <div class="indent">
+                name:
+                <span class="green">'ALPAN'</span>,
+            </div>
+
+            <div class="indent">
+                role:
+                <span class="green">'Web Developer'</span>,
+            </div>
+
+            <div class="indent">
+                passion:
+                <span class="green">'Technology'</span>,
+            </div>
+
+            <div class="indent">
+                gaming:
+                <span class="orange">true</span>
+            </div>
+
+            <div>};</div>
+
+            <br>
+
+            <div>
+                <span class="purple">function</span>
+                <span class="blue">createFuture</span>() {
+            </div>
+
+            <div class="indent">
+                <span class="purple">return</span>
+                <span class="green">'Keep Building 🚀'</span>;
+            </div>
+
+            <div>}</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <span class="number">01</span>
+
+        <p>WHO AM I?</p>
+
+        <h2>About Me</h2>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <p>
+                Halo! Saya <strong>ALPAN</strong>.
+                Saya memiliki ketertarikan terhadap dunia
+                teknologi dan pengembangan website.
+            </p>
+
+            <p>
+                Saya senang mempelajari teknologi baru,
+                membuat project, mencoba desain website,
+                dan mengeksplorasi berbagai hal di dunia digital.
+            </p>
+
+            <p>
+                Saya percaya bahwa setiap project adalah
+                kesempatan untuk belajar dan berkembang.
+            </p>
+
+        </div>
+
+
+        <div class="about-cards">
+
+            <div class="about-card">
+
+                <div class="about-icon">💻</div>
+
+                <div>
+                    <h3>Web Development</h3>
+                    <p>Membuat website modern & responsive.</p>
+                </div>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-icon">🎮</div>
+
+                <div>
+                    <h3>Gaming</h3>
+                    <p>Tertarik dengan game dan teknologi gaming.</p>
+                </div>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-icon">🎬</div>
+
+                <div>
+                    <h3>Content Creation</h3>
+                    <p>Membuat konten dan project digital.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <span class="number">02</span>
+
+        <p>MY TOOLBOX</p>
+
+        <h2>Skills</h2>
+
+    </div>
+
+
+    <div class="skills">
+
+        <div class="skill">
+
+            <div class="skill-icon">&lt;/&gt;</div>
+
+            <h3>HTML</h3>
+
+            <p>
+                Membuat struktur website yang rapi
+                dan mudah dikembangkan.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">✦</div>
+
+            <h3>CSS</h3>
+
+            <p>
+                Membuat tampilan website
+                modern dan responsive.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">JS</div>
+
+            <h3>JavaScript</h3>
+
+            <p>
+                Membuat website menjadi
+                interaktif dan dinamis.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">GH</div>
+
+            <h3>GitHub</h3>
+
+            <p>
+                Menyimpan dan melakukan
+                deploy project menggunakan GitHub.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <span class="number">03</span>
+
+        <p>MY WORK</p>
+
+        <h2>Projects</h2>
+
+    </div>
+
+
+    <div class="projects">
+
+
+        <div class="project">
+
+            <div class="project-cover">
+                <div>🎙️</div>
+            </div>
+
+            <div class="project-info">
+
+                <small>WEBSITE</small>
+
+                <h3>SMANRA Podcast</h3>
+
+                <p>
+                    Website podcast untuk menampilkan
+                    episode audio secara online.
+                </p>
+
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>GitHub</span>
+                </div>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-cover">
+                <div>📋</div>
+            </div>
+
+            <div class="project-info">
+
+                <small>WEB APP</small>
+
+                <h3>Absensi Ekskul</h3>
+
+                <p>
+                    Sistem absensi digital untuk
+                    kegiatan ekstrakurikuler.
+                </p>
+
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>JavaScript</span>
+                    <span>Supabase</span>
+                </div>
+
+                <a
+                    href="https://alfan-lone.github.io/absensi/"
+                    target="_blank"
+                    class="project-link"
+                >
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-cover">
+                <div>🎓</div>
+            </div>
+
+            <div class="project-info">
+
+                <small>SCHOOL PROJECT</small>
+
+                <h3>School Website</h3>
+
+                <p>
+                    Website sederhana untuk menampilkan
+                    informasi dan kegiatan sekolah.
+                </p>
+
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Responsive</span>
+                </div>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section>
+
+<div class="container">
+
+    <div class="stats">
+
+        <div class="stat">
+            <strong>03+</strong>
+            <span>Projects</span>
+        </div>
+
+        <div class="stat">
+            <strong>04+</strong>
+            <span>Technologies</span>
+        </div>
+
+        <div class="stat">
+            <strong>∞</strong>
+            <span>Ideas</span>
+        </div>
+
+        <div class="stat">
+            <strong>24/7</strong>
+            <span>Learning</span>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+    <div class="contact-box">
+
+        <p>GET IN TOUCH</p>
+
+        <h2>
+            Let's build something
+            <span>awesome.</span>
+        </h2>
+
+        <p class="desc">
+            Punya ide project atau ingin berkolaborasi?
+            Jangan ragu untuk menghubungi saya.
+        </p>
+
+        <a
+            href="mailto:emailkamu@gmail.com"
+            class="btn primary"
+        >
+            Say Hello →
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer">
+
+    <div>
+        <a href="#home" class="logo">
+            <span>&lt;</span>ALPAN<span>/&gt;</span>
+        </a>
+
+        <p>Building ideas into digital experiences.</p>
+    </div>
+
+    <p>
+        © <span id="year"></span> ALPAN
+    </p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+function menu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("active");
+
+}
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
