@@ -563,11 +563,49 @@ footer {
 
         <div class="about-content">
 
-        <div class="about-photo" style="width:220px !important; max-width:220px !important; flex:0 0 220px !important;">
+       <div class="about-profile-photo"
+style="
+width:220px;
+height:280px;
+padding:4px;
+box-sizing:border-box;
+flex-shrink:0;
+border:3px solid #00ff88;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 10px #00ff88, 0 0 25px rgba(0,255,136,0.7);
+transition:all 0.35s ease;
+">
+
     <img src="about.png"
-         alt="Foto Alpan"
-         style="width:220px !important; height:280px !important; object-fit:cover !important; display:block !important;">
-        </div>
+    alt="Foto Alpan"
+    style="
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:15px;
+    transition:transform 0.35s ease;
+    ">
+
+</div>
+          </div>
+
+<style>
+.about-profile-photo:hover {
+    transform: translateY(-10px) scale(1.03) !important;
+
+    box-shadow:
+        0 0 12px #00ff88,
+        0 0 30px #00ff88,
+        0 0 60px rgba(0,255,136,0.6) !important;
+}
+
+.about-profile-photo:hover img {
+    transform: scale(1.06);
+}
+</style>
+
             <div class="about-text">
                 <h3>Hai, saya Alpan 👋</h3>
 
